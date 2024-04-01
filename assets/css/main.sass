@@ -20,21 +20,122 @@ a
 button
     &:hover, &:focus
         @include short-code.text-DO
-
+input, textarea
+    &:focus-visible, &:focus-within, &:focus
+        @apply shadow-none  #{!important}
 .cs-panel-wrapper
     @apply flex bg-gray-100 min-h-screen 
     .cs-panel-sidebar
-        @apply  hidden sm:flex sm:flex-col w-64 
+        @apply  hidden sm:flex sm:flex-col w-56 
         &-main
             @apply flex-grow flex flex-col justify-between text-gray-500 bg-white
             .cs-sidebar-item
-                @apply inline-flex items-center justify-start gap-2 p-3 hover:text-white hover:bg-purple-500 focus:text-gray-400 focus:bg-gray-700 rounded-lg
+                @apply inline-flex items-center justify-start gap-2 p-1 mb-3 hover:text-white hover:bg-purple-500 focus:text-gray-400 focus:bg-gray-700 rounded-lg border-2 border-transparent
+                &.active
+                    @apply text-purple-600 bg-white rounded-lg border-2 border-purple-500
+                .cs-desc
+                    @apply text-sm
+            .cs-side-bottom
+                @apply flex flex-col
             .cs-side-top
                 @apply flex flex-col
+                .cs-title
+                    @apply mb-3
+            
         .cs-logo
             @apply w-full inline-flex items-center justify-center h-20  bg-purple-600 hover:bg-purple-500 focus:bg-purple-500 text-base text-white font-bold uppercase
     .cs-panel-content
-        width: calc( 100% - 16rem )  
+        width: calc( 100% - 14rem ) 
 .cs-message-area
-    
+    flex: 2
+.cs-filter-area
     flex: 1
+    padding: 1rem
+    .cs-selection-area
+        @apply flex flex-wrap
+        &::-webkit-scrollbar-track
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+            border-radius: 10px
+            background-color: #F5F5F5
+        &::-webkit-scrollbar
+            width: 3px
+            background-color: #F5F5F5
+        &::-webkit-scrollbar-thumb
+            border-radius: 10px
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+            background-color: #555
+        
+.cs-item-check
+    @apply relative m-[5px] float-left rounded-[25px] box-border border-0 
+    div
+        @apply w-full h-full flex justify-center items-center  leading-[25px] px-[10px] rounded-[25px] text-xs  hover:bg-purple-100
+        transition: .5s ease 
+        color: #4b5563
+        border: .5px solid #4b5563
+    input 
+        @apply absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer 
+    input[type=checkbox]:checked 
+        &~div 
+            background-color: #9333ea
+            color: white
+            border: .5px solid #9333ea
+.checkbox-wrapper-3 
+    input[type="checkbox"] 
+        visibility: hidden 
+        display: none 
+    .toggle 
+        position: relative 
+        display: block 
+        width: 40px 
+        height: 20px 
+        cursor: pointer 
+        -webkit-tap-highlight-color: transparent 
+        transform: translate3d(0, 0, 0) 
+        &:before 
+            content: "" 
+            position: relative 
+            top: 3px 
+            left: 3px 
+            width: 34px 
+            height: 14px 
+            display: block 
+            background: #9A9999 
+            border-radius: 8px 
+            transition: background 0.2s ease 
+        span 
+            position: absolute 
+            top: 0 
+            left: 0 
+            width: 20px 
+            height: 20px 
+            display: block 
+            background: white 
+            border-radius: 10px 
+            box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5) 
+            transition: all 0.2s ease 
+            &:before 
+                content: "" 
+                position: absolute 
+                display: block 
+                margin: -18px 
+                width: 56px 
+                height: 56px 
+                background: rgba(79, 46, 220, 0.5) 
+                border-radius: 50% 
+                transform: scale(0) 
+                opacity: 1 
+                pointer-events: none 
+    #cbx-3 
+        &:checked 
+            & + .toggle 
+                &:before 
+                    background: #947ADA 
+                span 
+                    background: #4F2EDC 
+                    transform: translateX(20px) 
+                    transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease 
+                    box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2) 
+                    &:before 
+                        transform: scale(1) 
+                        opacity: 0 
+                        transition: all 0.4s ease 
