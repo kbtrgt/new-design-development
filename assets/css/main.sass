@@ -1,8 +1,9 @@
 @use 'variables'
 @use 'short-code'
-
+@tailwind base
+@tailwind components
+@tailwind utilities
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap')
-@import url('../vendor/bootstrap-5.2/css/bootstrap.min.css')
 @import url('../vendor/fontawesome/css/all.min.css')
 
 *
@@ -19,25 +20,21 @@ a
 button
     &:hover, &:focus
         @include short-code.text-DO
-#goTpButton
-    display: inline-block
-    background-color: variables.$primaryColor
-    width: 50px
-    height: 50px
-    text-align: center
-    border-radius: 4px
-    position: fixed
-    bottom: 65px
-    right: -3px
-    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s
-    opacity: 0
-    visibility: hidden
-    z-index: 8
-    &::after
-        @include short-code.fontAwesomeCreate('\f077')
-        font-size: 2em
-        line-height: 50px
-        color: #ffffff
-    &.show-active
-        opacity: 1
-        visibility: visible
+
+.cs-panel-wrapper
+    @apply flex bg-gray-100 min-h-screen 
+    .cs-panel-sidebar
+        @apply  hidden sm:flex sm:flex-col w-64 
+        &-main
+            @apply flex-grow flex flex-col justify-between text-gray-500 bg-white
+            .cs-sidebar-item
+                @apply inline-flex items-center justify-start gap-2 p-3 hover:text-white hover:bg-purple-500 focus:text-gray-400 focus:bg-gray-700 rounded-lg
+            .cs-side-top
+                @apply flex flex-col
+        .cs-logo
+            @apply w-full inline-flex items-center justify-center h-20  bg-purple-600 hover:bg-purple-500 focus:bg-purple-500 text-base text-white font-bold uppercase
+    .cs-panel-content
+        width: calc( 100% - 16rem )  
+.cs-message-area
+    
+    flex: 1
