@@ -1,10 +1,38 @@
 @media (min-width: 1024px) and (max-width: 1100px)
 
  
-
+@media (max-width: 1024px)
+    .cs-panel-wrapper 
+        .cs-panel-main 
+            .cs-panel-sidebar
+                display: none
+                position: absolute 
+                z-index: 3
+                height: 100%
+                &-main
+                    height: 100%
+            .cs-panel-content-main
+                flex-direction: column-reverse
+                .cs-message-area
+                    flex: 1 1 100%
+                    max-width: 100%
+                .cs-filter-area
+                    flex: 1 1 100%
+                    max-width: 75%
+                    position: absolute
+                    top: 10px
+                    left: 10px
+                    overflow: auto
+                    height: calc( 100% - 100px )
+                    display: none
+                    z-index: 3
+                    &.active
+                        display: block
 @media (min-width: 768px) and (max-width: 1023px)
     
  
+@media (max-width: 767px)
+    
 @media (min-width: 500px)
     
 

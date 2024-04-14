@@ -1,1 +1,32 @@
-/*# sourceMappingURL=responsive.css.map */
+@media (max-width: 1024px) {
+  .cs-panel-wrapper .cs-panel-main .cs-panel-sidebar {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    height: 100%;
+  }
+  .cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main {
+    height: 100%;
+  }
+  .cs-panel-wrapper .cs-panel-main .cs-panel-content-main {
+    flex-direction: column-reverse;
+  }
+  .cs-panel-wrapper .cs-panel-main .cs-panel-content-main .cs-message-area {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .cs-panel-wrapper .cs-panel-main .cs-panel-content-main .cs-filter-area {
+    flex: 1 1 100%;
+    max-width: 75%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    overflow: auto;
+    height: calc(100% - 100px);
+    display: none;
+    z-index: 3;
+  }
+  .cs-panel-wrapper .cs-panel-main .cs-panel-content-main .cs-filter-area.active {
+    display: block;
+  }
+}/*# sourceMappingURL=responsive.css.map */

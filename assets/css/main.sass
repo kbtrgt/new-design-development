@@ -5,6 +5,7 @@
 @tailwind utilities
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap')
 @import url('../vendor/fontawesome/css/all.min.css')
+@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css)
 
 *
     font-family: variables.$mainFontFamily
@@ -20,36 +21,62 @@ a
 button
     &:hover, &:focus
         @include short-code.text-DO
-input, textarea
+input, textarea,select
     &:focus-visible, &:focus-within, &:focus
-        @apply shadow-none  #{!important}
+        
+        box-shadow: none !important
+        outline: none !important
+.cs-container
+    max-width: 1280px
+    margin: 0 auto
+.cs-logo
+    @apply inline-flex items-center justify-center h-20  bg-white hover:bg-[#2c4465]  text-base text-mainColor hover:text-white transition-all font-bold uppercase
+    width: calc(14rem - 40px)
 .cs-panel-wrapper
-    @apply flex bg-gray-100 min-h-screen 
-    .cs-panel-sidebar
-        @apply  hidden sm:flex sm:flex-col w-56 
-        &-main
-            @apply flex-grow flex flex-col justify-between text-gray-500 bg-white
-            .cs-sidebar-item
-                @apply inline-flex items-center justify-start gap-2 p-1 mb-3 hover:text-white hover:bg-purple-500 focus:text-gray-400 focus:bg-gray-700 rounded-lg border-2 border-transparent
-                &.active
-                    @apply text-purple-600 bg-white rounded-lg border-2 border-purple-500
-                .cs-desc
-                    @apply text-sm
-            .cs-side-bottom
-                @apply flex flex-col
-            .cs-side-top
-                @apply flex flex-col
-                .cs-title
-                    @apply mb-3
+    @apply  bg-gray-100 min-h-screen relative
+    height: 100vh
+    overflow: hidden
+    #sidebutton
+        bottom: 50px
+        left: 25px
+        font-size: 16px
+    .cs-panel-main
+        @apply flex bg-gray-100 min-h-screen relative
+        overflow: hidden
+        .cs-panel-sidebar
+            @apply  flex flex-col w-56 
+            &-main
+                @apply flex-grow flex flex-col justify-between text-gray-500 bg-white
+                .cs-sidebar-item
+                    @apply inline-flex items-center justify-start gap-2 p-1 mb-3 hover:text-white hover:bg-mainColor focus:text-gray-400 focus:bg-mainColor rounded-lg border-2 border-transparent
+                    &.active
+                        @apply text-mainColor bg-white rounded-lg border-2 border-mainColor
+                    .cs-desc
+                        @apply text-sm
+                .cs-side-bottom
+                    @apply flex flex-col
+                .cs-side-top
+                    @apply flex flex-col
+                    .cs-title
+                        @apply mb-3
             
-        .cs-logo
-            @apply w-full inline-flex items-center justify-center h-20  bg-purple-600 hover:bg-purple-500 focus:bg-purple-500 text-base text-white font-bold uppercase
-    .cs-panel-content
-        width: calc( 100% - 14rem ) 
+        .cs-panel-content
+            width: calc( 100% - 14rem ) 
+            overflow: hidden
+            overflow-y: auto
+            height: 100vh
+            padding-bottom: 100px
 .cs-message-area
-    flex: 2
+    flex: 1 1 70%
+    max-width: 70%
+    .cs-message-item
+        padding: 24px
+        gap: 16px
+            
+
 .cs-filter-area
-    flex: 1
+    flex: 1 1 30%
+    max-width: 30%
     padding: 1rem
     .cs-selection-area
         @apply flex flex-wrap
@@ -70,16 +97,24 @@ input, textarea
     div
         @apply w-full h-full flex justify-center items-center  leading-[25px] px-[10px] rounded-[25px] text-xs  hover:bg-purple-100
         transition: .5s ease 
-        color: #4b5563
-        border: .5px solid #4b5563
+        color: #6b7280
+        border: .5px solid #6b7280
+        span
+            font-size: 10px
+            font-weight: bold
+            padding: 0 5px
+            line-height: 15px
+            margin-right: -5px
     input 
         @apply absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer 
     input[type=checkbox]:checked 
         &~div 
-            background-color: #9333ea
+            background-color: #1a3761
             color: white
-            border: .5px solid #9333ea
-.checkbox-wrapper-3 
+            border: .5px solid #1a3761
+            span
+                color: #1a3761
+.cs-checkbox-lang-3 
     input[type="checkbox"] 
         visibility: hidden 
         display: none 
@@ -138,4 +173,100 @@ input, textarea
                     &:before 
                         transform: scale(1) 
                         opacity: 0 
-                        transition: all 0.4s ease 
+                        transition: all 0.4s ease
+
+.cs-checkbox-lang 
+    .tgl 
+        display: none 
+        & + .tgl-btn 
+            outline: 0 
+            display: block 
+            width: 2em 
+            height: 2em 
+            position: relative 
+            cursor: pointer 
+            -webkit-user-select: none 
+            -moz-user-select: none 
+            -ms-user-select: none 
+            user-select: none 
+            &:after 
+                left: 0 
+            &:before 
+                display: none 
+        &:checked 
+            & + .tgl-btn 
+                &:after 
+                    left: 50% 
+    .tgl-flip 
+        & + .tgl-btn 
+            padding: 2px 
+            transition: all 0.2s ease 
+            font-family: sans-serif 
+            perspective: 100px 
+            &:after 
+                content: 'TR' !important
+                background: #1a3761 
+                transform: rotateY(-180deg) 
+            &:before 
+                background: #1a3761
+                content: 'EN'!important
+            &:active 
+                &:before 
+                    transform: rotateY(-20deg) 
+        &:checked 
+            & + .tgl-btn 
+                &:before 
+                    transform: rotateY(180deg) 
+                &:after 
+                    transform: rotateY(0) 
+                    left: 0 
+                    background: #1a3761
+                &:active 
+                    &:after 
+                        transform: rotateY(20deg) 
+.cs-checkbox-lang .tgl,
+                    .cs-checkbox-lang .tgl:after,
+                    .cs-checkbox-lang .tgl:before,
+                    .cs-checkbox-lang .tgl *,
+                    .cs-checkbox-lang .tgl *:after,
+                    .cs-checkbox-lang .tgl *:before,
+                    .cs-checkbox-lang .tgl + .tgl-btn 
+    box-sizing: border-box 
+.cs-checkbox-lang .tgl::-moz-selection,
+                    .cs-checkbox-lang .tgl:after::-moz-selection,
+                    .cs-checkbox-lang .tgl:before::-moz-selection,
+                    .cs-checkbox-lang .tgl *::-moz-selection,
+                    .cs-checkbox-lang .tgl *:after::-moz-selection,
+                    .cs-checkbox-lang .tgl *:before::-moz-selection,
+                    .cs-checkbox-lang .tgl + .tgl-btn::-moz-selection,
+                    .cs-checkbox-lang .tgl::selection,
+                    .cs-checkbox-lang .tgl:after::selection,
+                    .cs-checkbox-lang .tgl:before::selection,
+                    .cs-checkbox-lang .tgl *::selection,
+                    .cs-checkbox-lang .tgl *:after::selection,
+                    .cs-checkbox-lang .tgl *:before::selection,
+                    .cs-checkbox-lang .tgl + .tgl-btn::selection 
+    background: none 
+.cs-checkbox-lang .tgl + .tgl-btn:after,
+                    .cs-checkbox-lang .tgl + .tgl-btn:before 
+    position: relative 
+    display: block 
+    content: "" 
+    width: 50% 
+    height: 100% 
+.cs-checkbox-lang .tgl-flip + .tgl-btn:after,
+                    .cs-checkbox-lang .tgl-flip + .tgl-btn:before 
+    display: inline-block 
+    transition: all 0.4s ease 
+    width: 100% 
+    text-align: center 
+    position: absolute 
+    line-height: 2em 
+    font-weight: semibold 
+    color: #fff 
+    position: absolute 
+    top: 0 
+    left: 0 
+    -webkit-backface-visibility: hidden 
+    backface-visibility: hidden 
+    border-radius: 50% 

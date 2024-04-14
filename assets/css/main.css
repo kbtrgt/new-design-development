@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
 @import url("../vendor/fontawesome/css/all.min.css");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,50 +29,79 @@ button:hover, button:focus {
   outline: none;
 }
 
-input:focus-visible, input:focus-within, input:focus, textarea:focus-visible, textarea:focus-within, textarea:focus {
-  @apply shadow-none  !important;
+input:focus-visible, input:focus-within, input:focus, textarea:focus-visible, textarea:focus-within, textarea:focus, select:focus-visible, select:focus-within, select:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.cs-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cs-logo {
+  @apply inline-flex items-center justify-center h-20  bg-white hover:bg-[#2c4465]  text-base text-mainColor hover:text-white transition-all font-bold uppercase;
+  width: calc(14rem - 40px);
 }
 
 .cs-panel-wrapper {
-  @apply flex bg-gray-100 min-h-screen;
+  @apply bg-gray-100 min-h-screen relative;
+  height: 100vh;
+  overflow: hidden;
 }
-.cs-panel-wrapper .cs-panel-sidebar {
-  @apply hidden sm:flex sm:flex-col w-56;
+.cs-panel-wrapper #sidebutton {
+  bottom: 50px;
+  left: 25px;
+  font-size: 16px;
 }
-.cs-panel-wrapper .cs-panel-sidebar-main {
+.cs-panel-wrapper .cs-panel-main {
+  @apply flex bg-gray-100 min-h-screen relative;
+  overflow: hidden;
+}
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar {
+  @apply flex flex-col w-56;
+}
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main {
   @apply flex-grow flex flex-col justify-between text-gray-500 bg-white;
 }
-.cs-panel-wrapper .cs-panel-sidebar-main .cs-sidebar-item {
-  @apply inline-flex items-center justify-start gap-2 p-1 mb-3 hover:text-white hover:bg-purple-500 focus:text-gray-400 focus:bg-gray-700 rounded-lg border-2 border-transparent;
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main .cs-sidebar-item {
+  @apply inline-flex items-center justify-start gap-2 p-1 mb-3 hover:text-white hover:bg-mainColor focus:text-gray-400 focus:bg-mainColor rounded-lg border-2 border-transparent;
 }
-.cs-panel-wrapper .cs-panel-sidebar-main .cs-sidebar-item.active {
-  @apply text-purple-600 bg-white rounded-lg border-2 border-purple-500;
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main .cs-sidebar-item.active {
+  @apply text-mainColor bg-white rounded-lg border-2 border-mainColor;
 }
-.cs-panel-wrapper .cs-panel-sidebar-main .cs-sidebar-item .cs-desc {
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main .cs-sidebar-item .cs-desc {
   @apply text-sm;
 }
-.cs-panel-wrapper .cs-panel-sidebar-main .cs-side-bottom {
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main .cs-side-bottom {
   @apply flex flex-col;
 }
-.cs-panel-wrapper .cs-panel-sidebar-main .cs-side-top {
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main .cs-side-top {
   @apply flex flex-col;
 }
-.cs-panel-wrapper .cs-panel-sidebar-main .cs-side-top .cs-title {
+.cs-panel-wrapper .cs-panel-main .cs-panel-sidebar-main .cs-side-top .cs-title {
   @apply mb-3;
 }
-.cs-panel-wrapper .cs-panel-sidebar .cs-logo {
-  @apply w-full inline-flex items-center justify-center h-20  bg-purple-600 hover:bg-purple-500 focus:bg-purple-500 text-base text-white font-bold uppercase;
-}
-.cs-panel-wrapper .cs-panel-content {
+.cs-panel-wrapper .cs-panel-main .cs-panel-content {
   width: calc(100% - 14rem);
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 100px;
 }
 
 .cs-message-area {
-  flex: 2;
+  flex: 1 1 70%;
+  max-width: 70%;
+}
+.cs-message-area .cs-message-item {
+  padding: 24px;
+  gap: 16px;
 }
 
 .cs-filter-area {
-  flex: 1;
+  flex: 1 1 30%;
+  max-width: 30%;
   padding: 1rem;
 }
 .cs-filter-area .cs-selection-area {
@@ -98,23 +128,33 @@ input:focus-visible, input:focus-within, input:focus, textarea:focus-visible, te
 .cs-item-check div {
   @apply w-full h-full flex justify-center items-center  leading-[25px] px-[10px] rounded-[25px] text-xs  hover:bg-purple-100;
   transition: 0.5s ease;
-  color: #4b5563;
-  border: 0.5px solid #4b5563;
+  color: #6b7280;
+  border: 0.5px solid #6b7280;
+}
+.cs-item-check div span {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 0 5px;
+  line-height: 15px;
+  margin-right: -5px;
 }
 .cs-item-check input {
   @apply absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer;
 }
 .cs-item-check input[type=checkbox]:checked ~ div {
-  background-color: #9333ea;
+  background-color: #1a3761;
   color: white;
-  border: 0.5px solid #9333ea;
+  border: 0.5px solid #1a3761;
+}
+.cs-item-check input[type=checkbox]:checked ~ div span {
+  color: #1a3761;
 }
 
-.checkbox-wrapper-3 input[type=checkbox] {
+.cs-checkbox-lang-3 input[type=checkbox] {
   visibility: hidden;
   display: none;
 }
-.checkbox-wrapper-3 .toggle {
+.cs-checkbox-lang-3 .toggle {
   position: relative;
   display: block;
   width: 40px;
@@ -123,7 +163,7 @@ input:focus-visible, input:focus-within, input:focus, textarea:focus-visible, te
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0, 0, 0);
 }
-.checkbox-wrapper-3 .toggle:before {
+.cs-checkbox-lang-3 .toggle:before {
   content: "";
   position: relative;
   top: 3px;
@@ -135,7 +175,7 @@ input:focus-visible, input:focus-within, input:focus, textarea:focus-visible, te
   border-radius: 8px;
   transition: background 0.2s ease;
 }
-.checkbox-wrapper-3 .toggle span {
+.cs-checkbox-lang-3 .toggle span {
   position: absolute;
   top: 0;
   left: 0;
@@ -147,7 +187,7 @@ input:focus-visible, input:focus-within, input:focus, textarea:focus-visible, te
   box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
   transition: all 0.2s ease;
 }
-.checkbox-wrapper-3 .toggle span:before {
+.cs-checkbox-lang-3 .toggle span:before {
   content: "";
   position: absolute;
   display: block;
@@ -160,17 +200,127 @@ input:focus-visible, input:focus-within, input:focus, textarea:focus-visible, te
   opacity: 1;
   pointer-events: none;
 }
-.checkbox-wrapper-3 #cbx-3:checked + .toggle:before {
+.cs-checkbox-lang-3 #cbx-3:checked + .toggle:before {
   background: #947ADA;
 }
-.checkbox-wrapper-3 #cbx-3:checked + .toggle span {
+.cs-checkbox-lang-3 #cbx-3:checked + .toggle span {
   background: #4F2EDC;
   transform: translateX(20px);
   transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
   box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
 }
-.checkbox-wrapper-3 #cbx-3:checked + .toggle span:before {
+.cs-checkbox-lang-3 #cbx-3:checked + .toggle span:before {
   transform: scale(1);
   opacity: 0;
   transition: all 0.4s ease;
+}
+
+.cs-checkbox-lang .tgl {
+  display: none;
+}
+.cs-checkbox-lang .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 2em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.cs-checkbox-lang .tgl + .tgl-btn:after {
+  left: 0;
+}
+.cs-checkbox-lang .tgl + .tgl-btn:before {
+  display: none;
+}
+.cs-checkbox-lang .tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+.cs-checkbox-lang .tgl-flip + .tgl-btn {
+  padding: 2px;
+  transition: all 0.2s ease;
+  font-family: sans-serif;
+  perspective: 100px;
+}
+.cs-checkbox-lang .tgl-flip + .tgl-btn:after {
+  content: "TR" !important;
+  background: #1a3761;
+  transform: rotateY(-180deg);
+}
+.cs-checkbox-lang .tgl-flip + .tgl-btn:before {
+  background: #1a3761;
+  content: "EN" !important;
+}
+.cs-checkbox-lang .tgl-flip + .tgl-btn:active:before {
+  transform: rotateY(-20deg);
+}
+.cs-checkbox-lang .tgl-flip:checked + .tgl-btn:before {
+  transform: rotateY(180deg);
+}
+.cs-checkbox-lang .tgl-flip:checked + .tgl-btn:after {
+  transform: rotateY(0);
+  left: 0;
+  background: #1a3761;
+}
+.cs-checkbox-lang .tgl-flip:checked + .tgl-btn:active:after {
+  transform: rotateY(20deg);
+}
+
+.cs-checkbox-lang .tgl,
+.cs-checkbox-lang .tgl:after,
+.cs-checkbox-lang .tgl:before,
+.cs-checkbox-lang .tgl *,
+.cs-checkbox-lang .tgl *:after,
+.cs-checkbox-lang .tgl *:before,
+.cs-checkbox-lang .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+
+.cs-checkbox-lang .tgl::-moz-selection, .cs-checkbox-lang .tgl:after::-moz-selection, .cs-checkbox-lang .tgl:before::-moz-selection, .cs-checkbox-lang .tgl *::-moz-selection, .cs-checkbox-lang .tgl *:after::-moz-selection, .cs-checkbox-lang .tgl *:before::-moz-selection, .cs-checkbox-lang .tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+
+.cs-checkbox-lang .tgl::-moz-selection,
+.cs-checkbox-lang .tgl:after::-moz-selection,
+.cs-checkbox-lang .tgl:before::-moz-selection,
+.cs-checkbox-lang .tgl *::-moz-selection,
+.cs-checkbox-lang .tgl *:after::-moz-selection,
+.cs-checkbox-lang .tgl *:before::-moz-selection,
+.cs-checkbox-lang .tgl + .tgl-btn::-moz-selection,
+.cs-checkbox-lang .tgl::selection,
+.cs-checkbox-lang .tgl:after::selection,
+.cs-checkbox-lang .tgl:before::selection,
+.cs-checkbox-lang .tgl *::selection,
+.cs-checkbox-lang .tgl *:after::selection,
+.cs-checkbox-lang .tgl *:before::selection,
+.cs-checkbox-lang .tgl + .tgl-btn::selection {
+  background: none;
+}
+
+.cs-checkbox-lang .tgl + .tgl-btn:after,
+.cs-checkbox-lang .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+
+.cs-checkbox-lang .tgl-flip + .tgl-btn:after,
+.cs-checkbox-lang .tgl-flip + .tgl-btn:before {
+  display: inline-block;
+  transition: all 0.4s ease;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  line-height: 2em;
+  font-weight: semibold;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */
