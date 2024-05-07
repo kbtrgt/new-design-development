@@ -17,31 +17,41 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <!--CSS END-->
+  <style>
+    .cs-mesage-item-main{
+      padding: 16px;
+    }
+  </style>
 </head>
 
 <body>
   <div class="cs-panel-wrapper">
-    <header class="flex items-center h-20 px-6 sm:px-10 bg-white shadow sticky top-0 z-10">
-      <button class=" inline-flex md:hidden px-3 py-2 text-white bg-gray-100 hover:bg-gray-200  rounded-full text-xl  "
-          id="sidebutton"><i class="fas fa-chevron-left text-mainColor"></i></button>
+    <header class="flex items-center h-20 px-6 sm:px-0 sm:pr-10 bg-white shadow sticky top-0 z-10">
+      <button class=" inline-flex lg:hidden px-3 py-2 text-white bg-gray-100 hover:bg-gray-200  rounded-md text-xl  "
+        id="sidebutton"><i class="fas fa-chevron-left text-mainColor"></i></button>
       <!-- <button id="sidebutton2"
         class="block  relative flex-shrink-0 p-2 mr-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 focus:bg-gray-100 focus:text-gray-800 rounded-full">
         <span class="sr-only">Menu</span>
         <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-        </svg>
+        </svg>  
       </button> -->
       <a href="#" class="cs-logo">
         Bilgi Bankası
       </a>
       <div class="relative hidden sm:block w-full max-w-md pl-[40px]">
-        <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor" class="absolute h-6 w-6 mt-2.5 ml-2 text-gray-400">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"
+          class="absolute h-6 w-6 mt-2.5 ml-2 text-gray-400">
+          <path fill-rule="evenodd"
+            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+            clip-rule="evenodd" />
         </svg>
-        <input type="text" role="search" placeholder="Arama" class="py-2 pl-10 pr-4 w-full border-4 border-transparent placeholder-gray-400 focus:bg-gray-50 rounded-lg" />
+        <input type="text" role="search" placeholder="Arama"
+          class="py-2 pl-10 pr-4 w-full border-4 border-transparent placeholder-gray-400 focus:bg-gray-50 rounded-lg" />
       </div>
       <div class="flex flex-shrink-0 items-center ml-auto">
-        <button class="inline-flex text-white bg-buttonColor hover:bg-buttonColorHover  rounded-md mr-3" style="padding: 5px;">
+        <button class="inline-flex text-white bg-buttonColor hover:bg-buttonColorHover  rounded-md "
+          style="padding: 5px;">
           <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             class="flex-shrink-0 h-6 w-6 text-white ">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -52,9 +62,9 @@
           <input class="tgl tgl-flip" id="cb5" type="checkbox" checked />
           <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Yeah!" for="cb5"></label>
         </div> -->
-        <button class="inline-flex items-center p-2 hover:bg-gray-100 focus:bg-gray-100 rounded-lg">
+        <!-- <button class="inline-flex items-center p-2 hover:bg-gray-100 focus:bg-gray-100 rounded-lg">
           <span class="sr-only">User Menu</span>
-          <div class="hidden md:flex md:flex-col md:items-end md:leading-tight">
+          <div class="hidden md:flex md:flex-col md:items-end md:leading-tight" >
             <span class="font-semibold">Ukbe Turgut</span>
             <span class="text-sm text-gray-600">Computer Programmer</span>
           </div>
@@ -63,7 +73,36 @@
               src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
               alt="user profile photo" class="h-full w-full object-cover">
           </span>
-        </button>
+        </button> -->
+        <div class="relative ml-3">
+          <div>
+            <button type="button"
+              class="relative flex-row-reverse flex max-w-xs items-center rounded-full bg-white text-sm hover:bg-gray-300  focus:outline-none  lg:rounded-md lg:p-2 lg:hover:bg-gray-50"
+              id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="absolute -inset-1.5 lg:hidden"></span>
+              <img class="h-8 w-8 rounded-full"
+                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
+                alt="">
+              <span class="mr-3 hidden text-sm font-medium text-gray-700 lg:block"><span class="sr-only">Open user menu
+                  for </span>Ukbe turgut </span>
+              <!-- <svg class="ml-1 hidden h-5 w-5 flex-shrink-0 text-gray-400 lg:block" viewBox="0 0 20 20"
+                fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg> -->
+            </button>
+          </div>
+          <div
+            class="hidden absolute right-0 z-10 mt-2 w-48 md:w-full origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            id="user-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" tabindex="-1">
+            <!-- Active: "bg-gray-100", Not Active: "" -->
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+              id="user-menu-item-0">Profil</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+              id="user-menu-item-2">Çıkış yap</a>
+          </div>
+        </div>
       </div>
     </header>
     <div class="cs-panel-main">
@@ -129,49 +168,88 @@
                 </svg>
                 <p class="cs-desc">Arama Kayıtları</p>
               </a>
-  
             </div>
           </nav>
-  
         </div>
       </aside>
       <div class="cs-panel-content flex-grow text-gray-800">
         <main class="p-6 sm:p-10 space-y-6">
-          <div class="cs-container">
+          <div class="cs-container">  
             <section class="flex gap-6 cs-panel-content-main">
-              <button class="cs-filter-button flex md:hidden rounded-md justify-center items-center w-[50px] h-[50px] bg-mainColor hover:text-gray-300 text-white absolute top-[100px] right-[20px] z-10">
+              <button class="cs-filter-button flex lg:hidden rounded-md justify-center items-center w-[50px] h-[50px] bg-mainColor hover:text-gray-300 text-white absolute top-[100px] right-[20px] z-10">
                 <i class="fas fa-filter"></i>
               </button>
               <div class="flex flex-col  md:col-span-2 md:row-span-2  rounded-lg cs-message-area">
-                <div class="cs-message-item flex  bg-white shadow rounded-lg  mb-4">
-                  <img
-                    src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
-                    alt="user profile photo" class="h-12 w-12 object-cover rounded-full">
+                <div class="cs-message-item flex  bg-white shadow rounded-lg">
+                  
                   <div class="cs-mesage-item-main">
-                    <div class="flex justify-between pb-2 h-12">
+                    <div class="flex justify-between pb-2 items-center">
                       <div class="flex flex-col  justify-start items-start">
-                        <p class="text-gray-500">Burak Kurt</p>
-                        <p class="text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        
                       </div>
                       <div class="flex gap-3 items-start">
-                        <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        
     
                       </div>
                     </div>
-                    <h6 class="cs-title text-xl font-semibold mb-1 text-mainColor">Test baslık</h6>
-                    <p class="cs-desc text-textColor mb-4 text-sm font-normal">
+                    <h6 class="cs-title text-xl font-semibold mb-1 text-mainColor">Test baslık22</h6>
+                    <p class="cs-desc text-textColor mb-2 text-sm font-normal inline mr-1">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis vero itaque, tenetur molestias
                       sed reprehenderit dolor assumenda necessitatibus tempore quia est maiores dicta non commodi nobis,
                       fugit quod ratione. Recusandae ducimus optio esse nihil! Facere, deserunt veniam, commodi laborum iure
-                      recusandae eos repellendus explicabo ipsa deleniti sapiente, officiis cum aut!
+                      recusandae eos repellendus explicabo ipsa deleniti sapiente, officiis cum aut!<p class="text-blue-700 inline">Burak Kurt</p>
+                      <span class=" gap-1 text-textColor font-base text-sm inline"> 01.01.2024</span>
                     </p>
-                    <div class="flex justify-between">
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <i class="fa-solid fa-tags text-gray-400 font-base text-sm"></i>
+                        <div class="flex cs-tags hidden">
+                          <span
+                            class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-[10px]">
+                            etiket 1</span>
+                          <span
+                            class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-[10px]">
+                            etiket 2</span>
+                          <span
+                            class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-[10px]">
+                            etiket 3</span>
+                        </div>
+                      </div>
+                      <div class="flex gap-3">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i> 44</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg">
+                  <!-- <img
+                    src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
+                    alt="user profile photo" class="h-12 w-12 object-cover rounded-full"> -->
+                  <div class="cs-mesage-item-main">
+                    <div class="flex justify-between pb-2 items-center">
+                      <div class="flex flex-col  justify-start items-start">
+                        <p class="text-gray-500">Burak Kurt</p>
+                        <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                      </div>
+                      <div class="flex gap-3 items-start">
+                        <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                      </div>
+                    </div>
+                    <h6 class="cs-title text-xl font-semibold mb-1 text-mainColor">Test baslık</h6>
+                    <p class="cs-desc text-textColor mb-2 text-sm font-normal">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis vero itaque, tenetur molestias
+                      sed reprehenderit dolor assumenda necessitatibus tempore quia est maiores dicta non commodi nobis.
+                    </p>
+                    <div class="flex justify-between items-center">
                       <div class="flex">
-                        <span class="inline-flex items-center gap-3 rounded-md p-2 bg-gray-100 text-gray-400 mr-2 text-sm">
+                        <span class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-sm">
                           etiket 1</span>
-                        <span class="inline-flex items-center gap-3 rounded-md p-2 bg-gray-100 text-gray-400 mr-2 text-sm">
+                        <span class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-sm">
                           etiket 2</span>
-                        <span class="inline-flex items-center gap-3 rounded-md p-2 bg-gray-100 text-gray-400 mr-2 text-sm">
+                        <span class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-sm">
                           etiket 3</span>
                       </div>
                       <div class="flex gap-3">
@@ -183,11 +261,54 @@
                     </div>
                   </div>
                 </div>
-                <div class="cs-message-item flex  bg-white shadow rounded-lg  mb-4">
+                <div class="cs-message-item flex  bg-white shadow rounded-lg">
+                  <!-- <img
+                    src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
+                    alt="user profile photo" class="h-12 w-12 object-cover rounded-full"> -->
+                  <div class="cs-mesage-item-main">
+                    <div class="flex justify-between pb-2 items-center">
+                      <div class="flex flex-col  justify-start items-start">
+                        <p class="text-gray-500">Burak Kurt</p>
+                        <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                      </div>
+                      <div class="flex gap-3 items-start">
+                        <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+    
+                      </div>
+                    </div>
+                    <h6 class="cs-title text-xl font-semibold mb-1 text-mainColor">Test baslık</h6>
+                    <p class="cs-desc text-textColor mb-2 text-sm font-normal">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis vero itaque, tenetur molestias
+                      sed reprehenderit dolor assumenda necessitatibus tempore quia est maiores dicta non commodi nobis,
+                      fugit quod ratione. Recusandae ducimus optio esse nihil! Facere, deserunt veniam, commodi laborum iure
+                      recusandae eos repellendus explicabo ipsa deleniti sapiente, officiis cum aut! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis vero itaque, tenetur molestias
+                      sed reprehenderit dolor assumenda necessitatibus tempore quia est maiores dicta non commodi nobis,
+                      fugit quod ratione. Recusandae ducimus optio esse nihil! Facere, deserunt veniam, commodi laborum iure
+                      recusandae eos repellendus explicabo ipsa deleniti sapiente, officiis cum aut!
+                    </p>
+                    <div class="flex justify-between items-center">
+                      <div class="flex">
+                        <span class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-sm">
+                          etiket 1</span>
+                        <span class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-sm">
+                          etiket 2</span>
+                        <span class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-sm">
+                          etiket 3</span>
+                      </div>
+                      <div class="flex gap-3">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i> 44</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg p-4">
                   <img
                     src="https://media.istockphoto.com/id/1351147752/photo/studio-portrait-of-attractive-20-year-old-bearded-man.jpg?s=612x612&w=0&k=20&c=-twL1NKKad6S_EPrGSniewjh6776A0Ju27ExMh7v_kI="
                     alt="user profile photo" class="h-12 w-12 object-cover rounded-full">
-                  <div class="cs-mesage-item-main">
+                  <div class="cs-mesage-item-main !p-0">
                     <div class="flex justify-between pb-2 h-12">
                       <div class="flex flex-col  justify-start items-start">
                         <p class="text-gray-500">İsmail Demirci</p>
@@ -218,11 +339,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="cs-message-item flex  bg-white shadow rounded-lg  mb-4">
+                <div class="cs-message-item flex  bg-white shadow rounded-lg p-4">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs7HxzKKvBIkjKHsnqkVp-9MXfpoxiNKx7v6x8ks1ToA&s"
                     alt="user profile photo" class="h-12 w-12 object-cover rounded-full">
-                  <div class="cs-mesage-item-main">
+                  <div class="cs-mesage-item-main !p-0">
                     <div class="flex justify-between pb-2 h-12">
                       <div class="flex flex-col  justify-start items-start">
                         <p class="text-gray-500">Ece Yılmaz</p>
@@ -262,8 +383,6 @@
                   </div>
                 </div>
               </div>
-    
-    
               <div class="cs-filter-area row-span-3 bg-white shadow rounded-lg h-fit">
                 <form action="" class="flex flex-col">
                   <div class="flex items-center justify-between relative font-semibold border-b border-gray-100">
@@ -846,6 +965,14 @@
             return value === "none" ? "auto" : "none";} 
           );
       })
+      $('#user-menu-button').on('click', function () {
+        $('#user-menu').toggleClass('hidden');
+        $('#user-menu').toggleClass('transition ease-out duration-100');
+        $('#user-menu').toggleClass('transition ease-in duration-75');
+
+        const expanded = $('#user-menu-button').attr('aria-expanded') === 'true' || false;
+        $('#user-menu-button').attr('aria-expanded', !expanded);
+      });
     });
   </script>
 </body>

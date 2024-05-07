@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <title>Document</title>
+  <link rel="icon" type="image/png" href="">
+  <!--CSS START-->
+  <link href="assets/vendor/select2/dist/css/select2.min.css" rel="sel-maintylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/vendor/owlcarousel/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/vendor/lightGallery/dist/css/lightgallery.css">
+  <link href="dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!--CSS END-->
+  <style>
+    .cs-test-div {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cs-panel-wrapper">
+    <header class="flex items-center h-20 px-6 sm:px-0 sm:pr-10 bg-white shadow sticky top-0 z-10">
+      <button class=" inline-flex lg:hidden px-3 py-2 text-white bg-gray-100 hover:bg-gray-200  rounded-md text-xl  "
+        id="sidebutton"><i class="fas fa-chevron-left text-mainColor"></i></button>
+      <!-- <button id="sidebutton2"
+        class="block  relative flex-shrink-0 p-2 mr-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 focus:bg-gray-100 focus:text-gray-800 rounded-full">
+        <span class="sr-only">Menu</span>
+        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+        </svg>  
+      </button> -->
+      <a href="#" class="cs-logo">
+        Bilgi Bankası
+      </a>
+      <div class="relative hidden sm:block w-full max-w-md pl-[40px]">
+        <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"
+          class="absolute h-6 w-6 mt-2.5 ml-2 text-gray-400">
+          <path fill-rule="evenodd"
+            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+            clip-rule="evenodd" />
+        </svg>
+        <input type="text" role="search" placeholder="Arama"
+          class="py-2 pl-10 pr-4 w-full border-4 border-transparent placeholder-gray-400 focus:bg-gray-50 rounded-lg" />
+      </div>
+      <div class="flex flex-shrink-0 items-center ml-auto">
+        <button class="inline-flex text-white bg-buttonColor hover:bg-buttonColorHover  rounded-md "
+          style="padding: 5px;">
+          <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="flex-shrink-0 h-6 w-6 text-white ">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+        </button>
+        <!--Dil değiştirme checkbox-->
+        <!-- <div class="cs-checkbox-lang">
+          <input class="tgl tgl-flip" id="cb5" type="checkbox" checked />
+          <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Yeah!" for="cb5"></label>
+        </div> -->
+        <!-- <button class="inline-flex items-center p-2 hover:bg-gray-100 focus:bg-gray-100 rounded-lg">
+          <span class="sr-only">User Menu</span>
+          <div class="hidden md:flex md:flex-col md:items-end md:leading-tight" >
+            <span class="font-semibold">Ukbe Turgut</span>
+            <span class="text-sm text-gray-600">Computer Programmer</span>
+          </div>
+          <span class="h-12 w-12 ml-2 sm:ml-3 mr-2 bg-gray-100 rounded-full overflow-hidden">
+            <img
+              src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
+              alt="user profile photo" class="h-full w-full object-cover">
+          </span>
+        </button> -->
+        <div class="relative ml-3">
+          <div>
+            <button type="button"
+              class="relative flex-row-reverse flex max-w-xs items-center rounded-full bg-white text-sm hover:bg-gray-300  focus:outline-none  lg:rounded-md lg:p-2 lg:hover:bg-gray-50"
+              id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="absolute -inset-1.5 lg:hidden"></span>
+              <img class="h-8 w-8 rounded-full"
+                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
+                alt="">
+              <span class="mr-3 hidden text-sm font-medium text-gray-700 lg:block"><span class="sr-only">Open user menu
+                  for </span>Ukbe turgut </span>
+              <!-- <svg class="ml-1 hidden h-5 w-5 flex-shrink-0 text-gray-400 lg:block" viewBox="0 0 20 20"
+                fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg> -->
+            </button>
+          </div>
+          <div
+            class="hidden absolute right-0 z-10 mt-2 w-48 md:w-full origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            id="user-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" tabindex="-1">
+            <!-- Active: "bg-gray-100", Not Active: "" -->
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+              id="user-menu-item-0">Profil</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+              id="user-menu-item-2">Çıkış yap</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="cs-panel-main">
+      <aside class="cs-panel-sidebar relative" id="sidebar">
+        <div class="cs-panel-sidebar-main shadow-[rgba(0,0,0,0.1)_1px_0px_3px_0px]">
+          <nav class="flex flex-col mx-4 my-6 space-y-4">
+            <div class="cs-side-top border-b border-gray-100">
+              <span class="cs-title">Soru</span>
+              <a href="#" class="cs-sidebar-item active">
+                <span class="sr-only">Folders</span>
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <p class="cs-desc">Sorular</p>
+              </a>
+              <a href="#" class="cs-sidebar-item">
+                <span class="sr-only">Folders</span>
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                </svg>
+                <p class="cs-desc">Sorularım</p>
+              </a>
+            </div>
+            <div class="cs-side-top">
+              <span class="cs-title">Yönetici</span>
+              <a href="#" class="cs-sidebar-item ">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <p class="cs-desc ">Kategori</p>
+              </a>
+              <a href="#" class="cs-sidebar-item">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <p class="cs-desc">Etiket</p>
+              </a>
+              <a href="#" class="cs-sidebar-item">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <p class="cs-desc">Moderasyon</p>
+              </a>
+              <a href="#" class="cs-sidebar-item">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <p class="cs-desc">Ayarlar</p>
+              </a>
+              <a href="#" class="cs-sidebar-item">
+                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                  <path fill-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clip-rule="evenodd" />
+                </svg>
+                <p class="cs-desc">Arama Kayıtları</p>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </aside>
+      <div class="cs-panel-content flex-grow text-gray-800">
+        <main class="p-6 sm:p-6 space-y-6">
+          <div class="cs-container">
+            <section class="flex gap-6 cs-panel-content-main">
+              <button
+                class="cs-filter-button flex lg:hidden rounded-md justify-center items-center w-[50px] h-[50px] bg-mainColor hover:text-gray-300 text-white absolute top-[100px] right-[20px] z-10">
+                <i class="fas fa-filter"></i>
+              </button>
+              <div
+                class="flex flex-col  md:col-span-2 md:row-span-2  rounded-lg cs-message-area h-max grid-cols-1 lg:grid-cols-2">
+                <!-- <div class="cs-message-item flex   shadow rounded-lg shadow-none " style="padding: 0 !important;">
+
+                  <div class="cs-mesage-item-main">
+
+                    <h6 class="cs-title text-md font-semibold mb-1 text-mainColor">Test baslık22 Lorem ipsum dolor sit
+                      amet.</h6>
+                    <div class="flex gap-3">
+                      <div class="flex flex-col justify-between flex-1">
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal inline mr-1 webkit-3 ">
+                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis vero itaque, tenetur
+                          molestias
+                          sed reprehenderit dolor assumenda necessitatibus tempore quia est maiores dicta non commodi
+                          nobis,
+                          fugit quod ratione. Recusandae ducimus optio esse nihil! Facere, deserunt veniam, commodi
+                          laborum iure
+                          recusandae eos repellendus explicabo ipsa deleniti sapiente, officiis cum aut!
+                        </p>
+                        <div class="flex items-center gap-1">
+                          <p class="text-blue-700 inline">Burak Kurt</p>
+                          <span class=" gap-1 text-textColor font-base text-sm inline"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col justify-end gap-3 items-start">
+                        <div class="cs-tags-wrapper relative">
+                          <i class="fa-solid fa-tags text-gray-400 font-base text-sm cs-tags-button"></i>
+                          <div
+                            class="flex flex-col cs-tags hidden absolute shadow bg-white p-2 gap-1 right-[5px] top-[15px] rounded-sm max-h-[100px] overflow-hidden overflow-y-auto">
+                            <span
+                              class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-[10px] whitespace-nowrap">
+                              etiket 1</span>
+                            <span
+                              class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-[10px] whitespace-nowrap">
+                              etiket 2</span>
+                            <span
+                              class="inline-flex items-center gap-3 rounded-md py-[5px] px-2 bg-gray-100 text-gray-400 mr-2 text-[10px] whitespace-nowrap">
+                              etiket 3</span>
+
+                          </div>
+                        </div>
+                        <div class="flex gap-3 flex-col">
+                          <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                              class="far fa-comment-alt text-gray-400"></i> 21</a>
+                          <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                              class="far fa-thumbs-up text-gray-400"></i> 44</a>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div> -->
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                          dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+                          consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
+                          Lorem ipsum dolor sit amet consectetur  
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum 
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem Lorem ipsum dolor sit amet consectetur Lorem  Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                          dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+                          consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
+                          Lorem ipsum dolor sit amet consectetur  
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum 
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem Lorem ipsum dolor sit amet consectetur Lorem  Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                          dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+                          consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
+                          Lorem ipsum dolor sit amet consectetur  
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum 
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem Lorem ipsum dolor sit amet consectetur Lorem  Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                          dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+                          consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
+                          Lorem ipsum dolor sit amet consectetur  
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum 
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem Lorem ipsum dolor sit amet consectetur Lorem  Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                          dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+                          consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur
+                          Lorem ipsum dolor sit amet consectetur  
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum lorem Lorem ipsum loLorem ipsum lorem Lorem ipsum lorem rem
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cs-message-item flex  bg-white shadow rounded-lg" style="padding: 12px;">
+                  <div class="cs-mesage-item-main flex flex-col justify-between w-full">
+                    <div class="flex flex-col w-full">
+                      <div class="flex justify-between  items-center">
+                        <div class="flex flex-col  justify-start items-start">
+                          <p class="text-gray-500">Burak Kurt</p>
+                          <p class="hidden text-gray-400 text-sm font-light">Yazılım Geliştirici</p>
+                        </div>
+                        <div class="flex gap-3 items-start">
+                          <span class="flex items-center gap-1 text-textColor font-base text-sm"> 01.01.2024</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col w-full">
+                        <a href="#" class="cs-title text-md font-semibold mb-1 text-mainColor line-clamp-2">Lorem ipsum
+                          lorem Lorem ipsum 
+                        </a>
+                        <p class="cs-desc text-textColor mb-2 text-sm font-normal webkit-3">
+                          Lorem ipsum dolor sit amet consectetur Lorem Lorem ipsum dolor sit amet consectetur Lorem  Lorem ipsum dolor sit amet consectetur Lorem 
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex justify-end items-center flex-wrap gap-1 ">  
+                      <div class="flex gap-3 cs-ss-div relative">
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-comment-alt text-gray-400"></i> 21</a>
+                        <a href="#" class="flex items-center gap-1 text-gray-400 font-base text-sm"><i
+                            class="far fa-thumbs-up text-gray-400"></i>
+                          44</a>
+                        <div class="cs-test-div hidden w-[200px] h-[400px] bg-black text-white">
+                          <p>test</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-filter-area row-span-3 bg-white shadow rounded-lg h-fit" >
+                <form action="" class="flex flex-col h-full">
+                  <div class="flex items-center justify-between relative font-semibold border-b border-gray-100">
+                    <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"
+                      class="absolute h-6 w-6  ml-2 text-gray-400">
+                      <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <input type="text" role="search" placeholder="Search"
+                      class="py-2 pl-10 pr-4 w-full border-4 border-transparent placeholder-gray-400 focus:bg-gray-50 rounded-lg" />
+                  </div>
+                  <div class="flex justify-between gap-6 mt-4">
+                    <button type="button"
+                      class="w-full text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5  ">Temizle</button>
+                    <button type="button"
+                      class="w-full text-white bg-buttonColor hover:bg-buttonColorHover focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  ">Filtrele</button>
+                  </div>
+                  <div class="cs-filter-main flex flex-col justify-between flex-1">
+                    <div class="cs-scrolling-area pt-3 ">
+                      <p class="cs-title mb-3 text-lg font-semibold text-mainColor border-b border-gray-100">Kategori
+                      </p>
+                      <div class="cs-selection-area overflow-y-auto mb-2" style="max-height: 19vh;">
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">3</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">1</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">11</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">8</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">3</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">1</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">11</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">8</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cs-scrolling-area pt-3">
+                      <p class="cs-desc mb-3 text-lg font-semibold text-mainColor border-b border-gray-100">Etiket</p>
+                      <div class="cs-selection-area overflow-y-auto mb-2" style="max-height: 19vh;">
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                            <span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">4</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">3</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">1</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">11</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">8</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">3</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">1</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">9</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum dolor
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">11</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorm
+                            </p>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              test
+                            </p><span
+                              class="ml-2 flex justify-center item-center text-textColor bg-gray-200 rounded-full h-auto">8</span>
+                          </div>
+                        </div>
+                        <div class="cs-item-check">
+                          <input type="checkbox" id="feature1" />
+                          <div>
+                            <p>
+                              lorem ipsum
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col my-2">
+
+                      <select id="small"
+                        class="block w-full p-2 mb-2 text-sm text-gray-500 border border-gray-300 rounded-lg">
+                        <option selected>Hepsi</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <select id="small"
+                        class="block w-full p-2 mb-2 text-sm text-gray-500 border border-gray-300 rounded-lg">
+                        <option selected>Tüm Zamanlar</option>
+                        <option value="1">1 </option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="cs-overlay hidden fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  </div>
+
+  <script src="assets/vendor/jQuery/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+        $("#sidebutton, #sidebutton2").click(function () {
+          $("#sidebar").animate({
+            width: "toggle"
+          }, 250);
+          $(this).find("i").toggleClass("fa-chevron-right fa-chevron-left");
+          $('.cs-overlay').toggleClass('hidden');
+          $('.cs-filter-area').removeClass('active');
+          $('.cs-filter-button').toggleClass('hidden');
+        });
+        $('.cs-filter-button').on('click', function () {
+          $('.cs-filter-area').toggleClass('active');
+          $('.cs-overlay').toggleClass('hidden');
+          $("#sidebutton, #sidebutton2").css('pointer-events', function (_, value) {
+            return value === "none" ? "auto" : "none";
+          }
+          );
+        })
+        $('#user-menu-button').on('click', function () {
+          $('#user-menu').toggleClass('hidden');
+          $('#user-menu').toggleClass('transition ease-out duration-100');
+          $('#user-menu').toggleClass('transition ease-in duration-75');
+  
+          const expanded = $('#user-menu-button').attr('aria-expanded') === 'true' || false;
+          $('#user-menu-button').attr('aria-expanded', !expanded);
+        });
+        $('.cs-tags-wrapper').on('mouseover', function () {
+          
+          $(this).closest('.cs-tags-wrapper').find('.cs-tags').removeClass('hidden');
+        });
+  
+        $('.cs-tags-wrapper').on('mouseleave', function () {
+          $(this).find('.cs-tags').addClass('hidden');
+        });
+  
+      });
+  </script>
+</body>
+
+</html>

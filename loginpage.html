@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <title>Document</title>
+  <link rel="icon" type="image/png" href="">
+  <!--CSS START-->
+  <link href="assets/vendor/select2/dist/css/select2.min.css" rel="sel-maintylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/vendor/owlcarousel/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/vendor/lightGallery/dist/css/lightgallery.css">
+  <link href="dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!--CSS END-->
+</head>
+
+<body>
+  <div class="cs-panel-wrapper">
+    <header class="flex items-center justify-between h-20 px-6 sm:px-0 sm:pr-10 bg-white shadow sticky top-0 z-10">
+
+      <a href="#" class="cs-logo">
+        Bilgi Bankası
+      </a>
+
+      <!--Dil değiştirme checkbox-->
+
+      <!-- <button class="inline-flex items-center p-2 hover:bg-gray-100 focus:bg-gray-100 rounded-lg">
+          <span class="sr-only">User Menu</span>
+          <div class="hidden md:flex md:flex-col md:items-end md:leading-tight" >
+            <span class="font-semibold">Ukbe Turgut</span>
+            <span class="text-sm text-gray-600">Computer Programmer</span>
+          </div>
+          <span class="h-12 w-12 ml-2 sm:ml-3 mr-2 bg-gray-100 rounded-full overflow-hidden">
+            <img
+              src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
+              alt="user profile photo" class="h-full w-full object-cover">
+          </span>
+        </button> -->
+      <div class="flex items-center relative ml-3">
+        <div class="cs-checkbox-lang">
+          <input class="tgl tgl-flip" id="cb5" type="checkbox" checked />
+          <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Yeah!" for="cb5"></label>
+        </div>
+        <div>
+          <button type="button"
+            class="relative flex-row-reverse flex max-w-xs items-center rounded-full bg-white text-sm hover:bg-gray-300  focus:outline-none  lg:rounded-md lg:p-2 lg:hover:bg-gray-50"
+            id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+            <span class="absolute -inset-1.5 lg:hidden"></span>
+            <img class="h-8 w-8 rounded-full"
+              src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1528"
+              alt="">
+            <span class="mr-3 hidden text-sm font-medium text-gray-700 lg:block"><span class="sr-only">Open user menu
+                for </span>Ukbe turgut </span>
+            <!-- <svg class="ml-1 hidden h-5 w-5 flex-shrink-0 text-gray-400 lg:block" viewBox="0 0 20 20"
+                fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg> -->
+          </button>
+        </div>
+        <div
+          class="hidden absolute right-0 z-10 mt-2 w-48 md:w-full origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          id="user-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" tabindex="-1">
+          <!-- Active: "bg-gray-100", Not Active: "" -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+            id="user-menu-item-0">Profil</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+            id="user-menu-item-2">Çıkış yap</a>
+        </div>
+      </div>
+  
+  </header>
+  <div class="cs-panel-main relative">
+    
+    <div class="flex flex-col items-center justify-between gap-4 h-max absolute top-1/4 left-1/2 -translate-y-1/2 -translate-x-1/2">
+      <p class="text-5xl text-gray-500 text-center uppercase">Knowledge base
+
+        <span class="block text-3xl text-textColor mt-5 capitalize">By Figensoft</span></p>
+     <div class="flex gap-4 items-center">
+      <p class="text-base font-semibold">Giriş yapılıyor...</p>
+      <button class="inline-flex text-white bg-buttonColor hover:bg-buttonColorHover  rounded-md hidden"
+        style="padding: 5px;">
+        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          class="flex-shrink-0 h-6 w-6 text-white ">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+        Giriş Yap
+      </button>
+     </div>
+    </div>
+  </div>
+
+  <div class="cs-overlay hidden fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+  </div>
+
+
+  <script src="assets/vendor/jQuery/jquery-3.6.0.min.js"></script>
+  <script src="assets/vendor/owlcarousel/js/owl.carousel.min.js"></script>
+  <script src="assets/vendor/lightGallery/dist/js/lightgallery.min.js"></script>
+  <script src="assets/vendor/select2/dist/js/select2.full.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#sidebutton, #sidebutton2").click(function () {
+        $("#sidebar").animate({
+          width: "toggle"
+        }, 250);
+        $(this).find("i").toggleClass("fa-chevron-right fa-chevron-left");
+        $('.cs-overlay').toggleClass('hidden');
+        $('.cs-filter-area').removeClass('active');
+        $('.cs-filter-button').toggleClass('hidden');
+      });
+      $('.cs-filter-button').on('click', function () {
+        $('.cs-filter-area').toggleClass('active');
+        $('.cs-overlay').toggleClass('hidden');
+        $("#sidebutton, #sidebutton2").css('pointer-events', function (_, value) {
+          return value === "none" ? "auto" : "none";
+        }
+        );
+      })
+      $('#user-menu-button').on('click', function () {
+        $('#user-menu').toggleClass('hidden');
+        $('#user-menu').toggleClass('transition ease-out duration-100');
+        $('#user-menu').toggleClass('transition ease-in duration-75');
+
+        const expanded = $('#user-menu-button').attr('aria-expanded') === 'true' || false;
+        $('#user-menu-button').attr('aria-expanded', !expanded);
+      });
+    });
+  </script>
+  <script>
+    function app() {
+      return {
+        wysiwyg: null,
+        init: function (el) {
+          // Get el
+          this.wysiwyg = el;
+          // Add CSS
+          this.wysiwyg.contentDocument.querySelector('head').innerHTML += `<style>
+                *, ::after, ::before {box-sizing: border-box;}
+                :root {tab-size: 4;}
+                html {line-height: 1.15;text-size-adjust: 100%;}
+                body {margin: 0px; padding: 1rem 0.5rem;}
+                body {font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";}
+                </style>`;
+          this.wysiwyg.contentDocument.body.innerHTML += `
+                <h1>Hello World!</h1>
+                <p>Welcome to the pure AlpineJS and Tailwind WYSIWYG.</p>
+                `;
+          // Make editable
+          this.wysiwyg.contentDocument.designMode = "on";
+        },
+        format: function (cmd, param) {
+          this.wysiwyg.contentDocument.execCommand(cmd, !1, param || null)
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
